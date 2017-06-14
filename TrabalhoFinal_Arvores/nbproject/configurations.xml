@@ -4,10 +4,16 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>Arvore234.h</itemPath>
+      <itemPath>ArvoreRB.h</itemPath>
+      <itemPath>E-S_dados.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>Arvore234.c</itemPath>
+      <itemPath>ArvoreRB.c</itemPath>
+      <itemPath>E-S_dados.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -36,6 +42,18 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Arvore234.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arvore234.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ArvoreRB.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ArvoreRB.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="E-S_dados.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="E-S_dados.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
@@ -59,6 +77,18 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Arvore234.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Arvore234.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ArvoreRB.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="ArvoreRB.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="E-S_dados.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="E-S_dados.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>

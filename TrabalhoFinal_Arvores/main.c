@@ -23,6 +23,7 @@ int main() {
             case 3:
                 system("clear");
                 //Função que imprime a arvore 2-3-4
+                 imprimirArvore234();
                 break;
             case 4:
                 //Chama a função que converte
@@ -52,6 +53,7 @@ int main() {
             case 3:
                 system("clear");
                 //Função que imprime a rubro-negra
+                imprimirArvoreRB();
                 break;
             case 4:
                 //Chama a função que converte    
