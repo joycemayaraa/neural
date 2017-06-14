@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 int main() {
-    int flag = 0, escolha1 = 0, escolha2 = 0;
+    int flagMenu = 0, escolha1 = 0, escolha2 = 0;
     
-    while(flag == 0){
+    while(flagMenu == 0){
         printf("1. Inserir novo elemento na árvore 2-3-4\n");
         printf("2. Remover elemento da árvore 2-3-4\n");
         printf("3. Imprimir árvore 2-3-4\n");
@@ -25,13 +25,13 @@ int main() {
             case 4:
                 //Chama a função que converte
                 system("clear");
-                flag = 1;
+                flagMenu = 1;
                 break;
             case 5:
                 exit(1);
                 break;
         }
-        while(flag == 1){
+        while(flagMenu == 1){
             printf("1. Inserir novo elemento na árvore Rubro-Negra\n");
             printf("2. Remover elemento da árvore Rubro-Negra\n");
             printf("3. Imprimir árvore Rubro-Negra\n");
@@ -52,7 +52,7 @@ int main() {
             case 4:
                 //Chama a função que converte    
                 system("clear");
-                flag = 0;
+                flagMenu = 0;
                 break;
             case 5:
                 exit(1);
