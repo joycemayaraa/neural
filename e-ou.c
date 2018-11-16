@@ -57,7 +57,7 @@ int main () {
 		switch(escolha) {
 			case 1: // Resolver OU
 
-				while (contNumeroEpocasOu < LIMITE_EPOCAS || contErroIndividualOu != 4) { // Define uma quantidade máxima de épocas para treinar o neurônio.
+				while (contNumeroEpocasOu < LIMITE_EPOCAS || (contErroIndividualOu == 4)) { // Define uma quantidade máxima de épocas para treinar o neurônio.
 					for (j = 0; j < 4; j++) { // Loop responsável por executar o neurônio para cada uma de suas entradas (para cada um dos 4 vetores (j = 0, j = 1, j = 3) temporários de entrada). 
 						
 						for(k = 0; k < 3; k++) {
@@ -81,7 +81,12 @@ int main () {
 						} else { // contErroIndividualOu será igual a 4 se não houver erro para todas as entradas do neurônio
 							contErroIndividualOu++; 
 						}
+
+						if(j == 3 && contErroIndividualOu < 4){
+							contErroIndividualOu = 0;
+						}
 						printf("Executou o neurônio para a entrada %d de 4.\n\n", j+1);
+
 					}
 					contNumeroEpocasOu++;					 
 				}
