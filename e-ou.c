@@ -86,7 +86,12 @@ int main () {
 							contErroIndividualOu++;
                             printf("Executou o neurônio para a entrada %d de 4.\n\n", j + 1); 
 						}
+
+						if(j == 3 && contErroIndividualOu < 4){
+							contErroIndividualOu = 0;
+						}
 						printf("Executou o neurônio para a entrada %d de 4.\n\n", j+1);
+
 					}
 					contNumeroEpocasOu++;					 
 				}
