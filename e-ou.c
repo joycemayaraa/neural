@@ -27,6 +27,7 @@ int main () {
 	double erroIndividual = 0; 
 	double taxaAprendizagemN = 1.414213562; //Considera-se a taxa (ou ritmo) de aprendizado igual à raiz quadrada de dois. Escolha arbitrária, mas recomenda-se um valor pequeno. 
 	
+	int i = 0; // Iterador. 
 	int j = 0; // Iterador. Atua na correspondência entre cada linha da matriz e a posição do vetor de saídas (que dá o valor de saída desejado àquela entrada). 
 	int k = 0; // Iterador. Atua no loop que atribui cada uma das linhas da matriz de entrada de dados para um vetor auxiliar. Índice para as linhas. 
 
@@ -73,6 +74,13 @@ int main () {
 				printf("\n");
 
 				gettimeofday(&inicio, NULL); // Inicia contagem do tempo de execução 
+
+
+				for (i = 0; i < 3; i++) {
+					printf("Insira posição %d de 3 do vetor de pesos: ", i+1);
+					scanf("%lf", &vetPesosW[i]);					
+				}
+				printf("\n");
 
 				while (contNumeroEpocasOu < limite_epocas) { // Define uma quantidade máxima de épocas para treinar o neurônio.
 
@@ -135,10 +143,10 @@ int main () {
 				tf = (double) fim.tv_usec + ( (double)fim.tv_sec * (1000000.0) );
 				ti = (double) inicio.tv_usec + ( (double)inicio.tv_sec * (1000000.0) );
 				tempoExecucaoOU = (tf - ti) / 1000; //milisegundos
-
+				
 				printf("Número de épocas executadas: %d\n", contNumeroEpocasOu);
 				printf("Total de ocorrência de erros: %d\n", contTotalErroIndividualOu);
-				printf("Tempo de execução da resolução da porta OU: %.5f\n\n", tempoExecucaoOU);
+				printf("Tempo de execução da resolução da porta OU: %.5f milisegundos\n\n", tempoExecucaoOU);
 
 				break; 
 
@@ -148,7 +156,13 @@ int main () {
 				scanf("%d", &limite_epocas);
 				printf("\n");
 
-				gettimeofday(&inicio, NULL); // Inicia contagem do tempo de execução 
+				gettimeofday(&inicio, NULL); // Inicia contagem do tempo de execução
+
+				for (i = 0; i < 3; i++) {
+					printf("Insira posição %d de 3 do vetor de pesos: ", i+1);
+					scanf("%lf", &vetPesosW[i]);					
+				}
+				printf("\n"); 
 
 				while (contNumeroEpocasE < limite_epocas) { // Define uma quantidade máxima de épocas para treinar o neurônio.
 
@@ -214,7 +228,7 @@ int main () {
 
 				printf("Número de épocas executadas: %d\n", contNumeroEpocasE);
 				printf("Total de ocorrência de erros: %d\n", contTotalErroIndividualE);
-				printf("Tempo de execução da resolução da porta E: %.5f\n\n", tempoExecucaoE);
+				printf("Tempo de execução da resolução da porta E: %.5f milisegundos\n\n", tempoExecucaoE);
 
 				break;
 			case 3: // Finalizar e sair. 
