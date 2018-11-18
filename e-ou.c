@@ -1,5 +1,7 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/time.h>
 
 // Funções
 double calcula_NivelAtivacao(double* pVetEntrada, double* pVetPesos);
@@ -41,6 +43,11 @@ int main () {
 
 	int escolha = 0; 
 
+	struct timeval inicio, fim;
+	double tempoExecucaoOU = 0;
+	double tempoExecucaoE = 0;
+	double ti = 0, tf = 0;
+
 // MENU
 	do {
 
@@ -64,6 +71,8 @@ int main () {
 				printf("Insira o limite máximo de épocas: ");
 				scanf("%d", &limite_epocas);
 				printf("\n");
+
+				gettimeofday(&inicio, NULL); // Inicia contagem do tempo de execução 
 
 				while (contNumeroEpocasOu < limite_epocas) { // Define uma quantidade máxima de épocas para treinar o neurônio.
 
@@ -121,8 +130,15 @@ int main () {
 										 
 				} 
 
+				// Finaliza contagem do tempo de execução
+				gettimeofday(&fim, NULL);
+				tf = (double) fim.tv_usec + ( (double)fim.tv_sec * (1000000.0) );
+				ti = (double) inicio.tv_usec + ( (double)inicio.tv_sec * (1000000.0) );
+				tempoExecucaoOU = (tf - ti) / 1000; //milisegundos
+
 				printf("Número de épocas executadas: %d\n", contNumeroEpocasOu);
-				printf("Total de ocorrência de erros: %d\n\n", contTotalErroIndividualOu);
+				printf("Total de ocorrência de erros: %d\n", contTotalErroIndividualOu);
+				printf("Tempo de execução da resolução da porta OU: %.5f\n\n", tempoExecucaoOU);
 
 				break; 
 
@@ -131,6 +147,8 @@ int main () {
 				printf("Insira o limite máximo de épocas: ");
 				scanf("%d", &limite_epocas);
 				printf("\n");
+
+				gettimeofday(&inicio, NULL); // Inicia contagem do tempo de execução 
 
 				while (contNumeroEpocasE < limite_epocas) { // Define uma quantidade máxima de épocas para treinar o neurônio.
 
@@ -188,8 +206,15 @@ int main () {
 										 
 				} 
 
+				// Finaliza contagem do tempo de execução
+				gettimeofday(&fim, NULL);
+				tf = (double) fim.tv_usec + ( (double)fim.tv_sec * (1000000.0) );
+				ti = (double) inicio.tv_usec + ( (double)inicio.tv_sec * (1000000.0) );
+				tempoExecucaoE = (tf - ti) / 1000; //milisegundos
+
 				printf("Número de épocas executadas: %d\n", contNumeroEpocasE);
-				printf("Total de ocorrência de erros: %d\n\n", contTotalErroIndividualE);
+				printf("Total de ocorrência de erros: %d\n", contTotalErroIndividualE);
+				printf("Tempo de execução da resolução da porta E: %.5f\n\n", tempoExecucaoE);
 
 				break;
 			case 3: // Finalizar e sair. 
